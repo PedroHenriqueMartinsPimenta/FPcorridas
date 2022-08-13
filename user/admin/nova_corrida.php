@@ -13,12 +13,54 @@
 	
 	<div class="row">
 		<div class="col-12">
-			<form>
+			<form action="../../controller/nova_corrida.php?id=1" method="post" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-md-6">
-						<label>Informe o nome da corrida: </label>
-						<input type="text" name="nome" required>
+						<label>Informe o nome da corrida: <span id="required">*</span></label>
+						<input required type="text" name="nome">
 					</div>
+
+					<div class="col-md-6">
+						<label>Informe o dia do evento:<span id="required">*</span></label>
+						<input required type="date" name="dia" required>
+					</div>
+
+					 <div class="col-md-12">
+					 	<label>Descreva o evento: <span id="required">*</span></label>
+					 	<textarea name="desc" required></textarea>
+					 </div>
+
+					 <div class="col-md-4">
+					 	<label>Inicio das inscrições: <span id="required">*</span></label>
+					 	<input required type="date" name="ins_inicio">
+					 </div>
+
+					 <div class="col-md-4">
+					 	<label>Fim das inscrições: <span id="required">*</span></label>
+					 	<input required type="date" name="ins_fim">
+					 </div>
+					 <div class="col-md-4">
+					 	<label>Valor das inscriçoes:<span id="required">*</span> </label>
+					 	<input required type="number" name="preco">
+					 </div>
+					 <div class="col-md-4">
+					 	<label>Distancia (Km):<span id="required">*</span> </label>
+					 	<input required type="number" name="distancia">
+					 </div>
+
+					 <div class="col-md-4">
+					 	<label>Edital:<span id="required">*</span> </label>
+					 	<input required type="file" name="edital">
+					 </div>
+
+					 <div class="col-md-4">
+					 	<label>Variação de elevação máxima: </label>
+					 	<input type="number" name="elevacao">
+					 </div>
+
+					 <div class="col-md-12">
+					 	<button type="submit" class="col-md-3">Salvar</button>
+					 </div>
 				</div>
 			</form>
 		</div>
