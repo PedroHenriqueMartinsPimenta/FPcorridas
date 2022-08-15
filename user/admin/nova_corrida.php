@@ -57,8 +57,17 @@
 					 	<label>Variação de elevação máxima: </label>
 					 	<input type="number" name="elevacao">
 					 </div>
-
-					 <div class="col-md-12">
+				 	 <div class="col-12">
+				 		<hr>
+				 		<h3>Mídia da corrida</h3>
+				 	 </div>
+				 	 <div class="col-md-12">
+				 		<label>Selecione o banner da corrida: <span id="required">*</span></label>
+				 		<input type="file" name="midia">
+					 </div>
+					 <br>
+					 <br>
+					 <div class="col-md-12 mt-4">
 					 	<button type="submit" class="col-md-3">Salvar</button>
 					 </div>
 				</div>
