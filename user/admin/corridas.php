@@ -1,5 +1,5 @@
 <?php
-	$titulo = "Corridas";
+	$titulo = "Eventos";
 	include_once('../../config/link.php');
 	include_once('../../content/header.php');
 	include_once('../../content/nav.php');
@@ -15,12 +15,12 @@
 	?>
 	<div class="row">
 		<div class="col-12">
-			<h3>Confira as corridas</h3>
+			<h3>Confira os eventos</h3>
 		</div>
 	</div>
 	<div class="row mb-2">
 		<div class="col-12">
-			<a href="nova_corrida.php" class="btn btn-warning">Nova corrida</a>
+			<a href="nova_corrida.php" class="btn btn-warning">Novo Evento</a>
 		</div>
 	</div>
 	<div class="row mb-3">
@@ -28,7 +28,7 @@
 			<form action="corridas.php" method="post">
 				<div class="row">
 					<div class="col-md-10">
-						<input type="text" name="corrida" placeholder="Pesquisa pelo nome da corrida">
+						<input type="text" name="corrida" placeholder="Pesquisa pelo nome do evento">
 					</div>
 					<div class="col-md-2">
 						<button type="submit">Pesquisar</button>
@@ -119,7 +119,14 @@
 	</div>
 
 			
-	
+	<script type="text/javascript">
+		function remover(codigo){
+			var c = confirm("Realmente deseja remover essa corrida? \n - Essa ação não poderá ser desfeita");
+			if (c) {
+				window.location.href = "../../controller/corridas.php?id=1&codigo="+codigo;
+			}
+		}
+	</script>
 	<?php
 	}else{
 		$_SESSION['erro'] = "Você não tem permissão";

@@ -17,7 +17,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label>Informe o nome da corrida: <span id="required">*</span></label>
-						<input required type="text" name="nome">
+						<input required type="text" name="nome" maxlength="45">
 					</div>
 
 					<div class="col-md-6">

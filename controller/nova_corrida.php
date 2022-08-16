@@ -9,7 +9,8 @@
 			// Adiciona nova corrida
 			$nome = $_POST['nome'];
 			$dia = $_POST['dia'];
-			$desc = $_POST['desc'];
+			$desc = str_replace("\n", "<br>", $_POST['desc']);
+			echo $desc;
 			$ins_inicio = $_POST['ins_inicio'];
 			$ins_fim = $_POST['ins_fim'];
 			$preco = $_POST['preco'];
