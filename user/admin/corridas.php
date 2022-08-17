@@ -58,8 +58,8 @@
 				      <td width="200px">Descrição</td>
 				      <td width="110">Inicio inscrições</td>
 				      <td width="110">Fim inscrições</td>
-				      <td width="70">Valor</td>
-				      <td width="80">Distancia</td>
+				      <td width="80">Valor</td>
+				      <td width="90">Distancia</td>
 				      <td width="70">Edital</td>
 				      <td width="80">Elevação</td>
 				      <td width="100">Inscritos</td>
@@ -79,12 +79,18 @@
 				  		}
 				  		$query = mysqli_query($con, $sql);
 				  		while($row = mysqli_fetch_array($query)){
+				  			if($row['DISPONIVEL'] == 0){
+				  				?>
+				  				<tr style="opacity: 0.8; color: #EB4501;">
+				  				<?php
+				  			}else{
 				  			?>
 				  				<tr>
+				  			<?php } ?>
 				  					<td><?php echo $row['CODIGO']?></td>
 				  					<td><?php echo $row['NOME']?></td>
 				  					<td><?php echo $row['DATA']?></td>
-				  					<td><?php echo substr($row['DESCRICAO'], 0, 100)?></td>
+				  					<td><?php echo substr($row['DESCRICAO'], 0, 50)?>...</td>
 				  					<td><?php echo $row['INSC_MIN']?></td>
 				  					<td><?php echo $row['INSC_MAX']?></td>
 				  					<td>R$ <?php echo $row['PRC_INSCRICAO']?></td>
@@ -93,7 +99,7 @@
 				  					<td><?php echo $row['ELEVACAO']?></td>
 				  					<td><a href="inscritos.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning">Inscritos</a></td>
 				  					<td><a href="resultado.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning">Resultados</a></td>
-				  					<td><a href="ativo.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning">
+				  					<td><a href="../../controller/corridas.php?id=2&codigo=<?php echo $row['CODIGO']?>&status=<?php echo $row['DISPONIVEL']?>" class="btn btn-warning">
 											<?php 
 												if($row['DISPONIVEL']){
 													?>

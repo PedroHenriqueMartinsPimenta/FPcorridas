@@ -41,11 +41,11 @@
 					 </div>
 					 <div class="col-md-4">
 					 	<label>Valor das inscriçoes:<span id="required">*</span> </label>
-					 	<input required type="number" name="preco">
+					 	<input required type="number" name="preco" step="0.01">
 					 </div>
 					 <div class="col-md-4">
 					 	<label>Distancia (Km):<span id="required">*</span> </label>
-					 	<input required type="number" name="distancia">
+					 	<input required type="number" name="distancia" step="0.01">
 					 </div>
 
 					 <div class="col-md-4">
