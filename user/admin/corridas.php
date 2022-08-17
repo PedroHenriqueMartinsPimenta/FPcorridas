@@ -73,9 +73,9 @@
 				  	<?php
 				  		if (isset($_POST['corrida'])) {
 				  			$pesquisa = $_POST['corrida'];
-				  			$sql = "SELECT * FROM prova WHERE CONCAT(DESCRICAO, NOME) LIKE '%$pesquisa%' LIMIT $total";
+				  			$sql = "SELECT * FROM prova WHERE CONCAT(DESCRICAO, NOME) LIKE '%$pesquisa%' ORDER BY CODIGO DESC LIMIT $total";
 				  		}else{
-				  			$sql = "SELECT * FROM prova LIMIT $total";
+				  			$sql = "SELECT * FROM prova ORDER BY CODIGO DESC LIMIT $total";
 				  		}
 				  		$query = mysqli_query($con, $sql);
 				  		while($row = mysqli_fetch_array($query)){
