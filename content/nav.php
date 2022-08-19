@@ -151,7 +151,7 @@
 													<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item menu-item-has-children menu-item-23 dropdown corridas"><a href="#">Gerenciar</a><span class="mobi_drop d-lg-none"><a href="#" class="fa"><img src="<?php echo $url?>layout/layout_files/images/icon_seta2.png" width="10px"></a></span>
 												<ul class="dropdown-menu">
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/corridas.php">Eventos</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/patrocionadores.php">Patrocionadores</a></li>
+													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/parceiros.php">Patrocionadores</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Categorias</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Brindes</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Mídia</a></li>

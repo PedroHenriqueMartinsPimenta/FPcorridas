@@ -12,6 +12,10 @@
 			$_SESSION['total'] = 30;
 		}
 		$total = $_SESSION['total'];
+		if ($total < 30) {
+			$total = 30;
+			$_SESSION['total'] = 30;
+		}
 	?>
 	<div class="row">
 		<div class="col-12">
@@ -118,12 +122,27 @@
 				  			<?php
 				  		}
 				  	?>
+				  	
 				  </tbody>
 				</table>
+				<?php
+  			if ($total > 30) {
+  				?>
+  				<div class="col-md-1">
+  					<a href="corridas.php?total_mais=-30"  class="btn btn-warning">Menos</a>
+  				</div>
+  				<?php
+  			}
+  		?>
+  		<div class="col-md-1">
+  					<a href="corridas.php?total_mais=30" class="btn btn-warning">Mais</a>
+  				</div>
 			</div>
 		</div>
 	</div>
-
+	<div class="row">
+  		
+  	</div>
 			
 	<script type="text/javascript">
 		function remover(codigo){
