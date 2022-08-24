@@ -1,5 +1,5 @@
 <?php
-	$titulo = "Parceiros";
+	$titulo = "Brindes";
 	include_once('../../config/link.php');
 	include_once('../../content/header.php');
 	include_once('../../content/nav.php');
@@ -19,20 +19,20 @@
 	?>
 	<div class="row">
 		<div class="col-12">
-			<h3>Confira os parceiros</h3>
+			<h3>Confira os brindes</h3>
 		</div>
 	</div>
 	<div class="row mb-2">
 		<div class="col-12">
-			<a href="novo_parceiro.php" class="btn btn-warning">Novo Parceiro</a>
+			<a href="novo_brinde.php" class="btn btn-warning">Novo brinde</a>
 		</div>
 	</div>
 	<div class="row mb-3">
 		<div class="col-12">
-			<form action="parceiros.php" method="post">
+			<form action="brinde.php" method="post">
 				<div class="row">
 					<div class="col-md-10">
-						<input type="text" name="pesquisa" placeholder="Pesquisa pelo nome do parceiro">
+						<input type="text" name="pesquisa" placeholder="Pesquisa pelo nome da corrida">
 					</div>
 					<div class="col-md-2">
 						<button type="submit">Pesquisar</button>
@@ -57,11 +57,10 @@
 				  <thead>
 				    <tr>
 				      <th width="100px">Codigo</th>
-				      <td width="200px">Nome</td>
-				      <td width="110px">Telefone</td>				      
-				      <td width="110px">Contribuição</td>
-				      <td width="200px">Logo</td>
-				      <td width="110">Corrida</td>
+				      <td width="200px">Descrição</td>
+				      <td width="110px">Valor</td>	
+				      <td width="110px">Ativo / Desativo</td>					      
+				      <td width="110px">Editar</td>
 				      <td width="80">Remover</td>
 				    </tr>
 				  </thead>
@@ -69,20 +68,43 @@
 				  	<?php
 				  		if (isset($_POST['pesquisa'])) {
 				  			$pesquisa = $_POST['pesquisa'];
-				  			$sql = "SELECT prova.NOME AS PROVA, parceria.NOME, parceria.TELEFONE, parceria.LOGO, parceria.CONTRIBUICAO, parceria.CODIGO  FROM prova INNER JOIN parceria ON prova.CODIGO = parceria.prova_CODIGO WHERE prova.DISPONIVEL = 1 AND parceria.NOME LIKE '%$pesquisa%' ORDER BY parceria.CODIGO DESC LIMIT $total";
+				  			$sql = "SELECT brinde.DESCRICAO, brinde.VALOR, brinde.CODIGO, brinde.ATIVO FROM brinde WHERE brinde.DESCRICAO LIKE '%$pesquisa%' ORDER BY brinde.CODIGO DESC LIMIT $total";
 				  		}else{
-				  			$sql = "SELECT prova.NOME AS PROVA, parceria.NOME, parceria.TELEFONE, parceria.LOGO, parceria.CONTRIBUICAO, parceria.CODIGO  FROM prova INNER JOIN parceria ON prova.CODIGO = parceria.prova_CODIGO WHERE prova.DISPONIVEL = 1 ORDER BY parceria.CODIGO DESC LIMIT $total";
+				  			$sql = "SELECT brinde.DESCRICAO, brinde.VALOR, brinde.CODIGO, brinde.ATIVO FROM brinde ORDER BY brinde.CODIGO DESC LIMIT $total";
 				  		}
+
 				  		$query = mysqli_query($con, $sql);
 				  		while($row = mysqli_fetch_array($query)){
+				  			if($row['ATIVO']){
+				  				?>
+				  				<tr >
+				  				<?php
+				  			}else {
+				  				?>
+				  				<tr style="opacity: 0.8; color: #EB4501;">
+				  				<?php
+				  			}
 				  			?>
-				  				<tr>
+				  				
 				  					<td><?php echo $row['CODIGO']?></td>
-				  					<td><?php echo $row['NOME']?></td>
-				  					<td><?php echo $row['TELEFONE']?></td>
-				  					<td>R$ <?php echo $row['CONTRIBUICAO']?></td>
-				  					<td><img src="<?php echo $row['LOGO']?>" width="100px"></td>
-				  					<td><?php echo $row['PROVA']?></td>
+				  					<td><?php echo $row['DESCRICAO']?></td>
+				  					<td>R$ <?php echo $row['VALOR']?></td>
+				  					<td>
+				  						<?php
+				  							if($row['ATIVO'] == 1){
+				  								?>
+				  								<a href="../../controller/brinde.php?id=2&codigo=<?php echo $row['CODIGO']?>&status=<?php echo $row['ATIVO']?>" class="btn btn-warning">Desativar</a>
+				  								<?php
+				  							}else{
+				  								?>
+				  								<a href="../../controller/brinde.php?id=2&codigo=<?php echo $row['CODIGO']?>&status=<?php echo $row['ATIVO']?>" class="btn btn-warning">Ativar</a>
+				  								<?php
+				  							}
+				  						?>
+				  					</td>
+				  					<td>
+				  						<a href="" class="btn btn-warning">Editar</a>
+				  					</td>
 				  					<td><button id="x" onclick="remover(<?php echo $row['CODIGO']?>)">X</button></td>
 				  				</tr>
 				  			<?php
@@ -114,7 +136,7 @@
 		function remover(codigo){
 			var c = confirm("Realmente deseja remover essa corrida? \n - Essa ação não poderá ser desfeita");
 			if (c) {
-				window.location.href = "../../controller/parceiros.php?id=1&codigo="+codigo;
+				window.location.href = "../../controller/brinde.php?id=1&codigo="+codigo;
 			}
 		}
 	</script>

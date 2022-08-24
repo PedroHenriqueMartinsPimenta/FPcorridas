@@ -128,9 +128,8 @@
 	                        <div class="theme-menu">
 	                            <nav class="menubar">
 	                                <ul id="menu-menu" class="menu-wrap menu-principal">
-	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Início</a></li>
+	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Corridas</a></li>
 										
-										<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-14 current_page_item menu-item-21"><a href="https://fpcorridas.000webhostapp.com/MVP_06082022/?page_id=14">Corridas</a></li>
 	                                	<?php
 											if(isset($_SESSION['user'])){
 												?>
@@ -152,9 +151,7 @@
 												<ul class="dropdown-menu">
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/corridas.php">Eventos</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/parceiros.php">Patrocionadores</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Categorias</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Brindes</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Mídia</a></li>
+													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/brinde.php">Brindes</a></li>
 												</ul>
 												</li>
 													<?php

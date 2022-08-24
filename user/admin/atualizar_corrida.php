@@ -52,14 +52,20 @@
 					 	<label>Distancia (Km):<span id="required">*</span> </label>
 					 	<input required type="number" name="distancia" step="0.01" value="<?php echo $row['DISTANCIA']?>">
 					 </div>
-
-					 
-
 					 <div class="col-md-4">
 					 	<label>Variação de elevação máxima: </label>
 					 	<input type="number" name="elevacao" value="<?php echo $row['ELEVACAO']?>">
 					 </div>
-				 	 
+				 	 <div class="col-md-4">
+					 	<label>Categoria: </label>
+					 	<select name="categoria" id="cat">
+					 		<option value="0">Geral</option>
+					 		<option value="1">Com categoria de idade</option>
+					 	</select>
+					 	<script type="text/javascript">
+					 		document.querySelector('#cat').value = <?php echo json_encode($row['CATEGORIA'])?>
+					 	</script>
+					 </div>
 					 <div class="col-md-12 mt-4">
 					 	<button type="submit" class="col-md-3">Salvar</button>
 					 </div>

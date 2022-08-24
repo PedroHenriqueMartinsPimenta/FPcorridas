@@ -17,7 +17,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label>Informe o nome da corrida: <span id="required">*</span></label>
-						<input required type="text" name="nome" maxlength="45">
+						<input required type="text" name="nome" maxlength="100">
 					</div>
 
 					<div class="col-md-6">
@@ -56,6 +56,13 @@
 					 <div class="col-md-4">
 					 	<label>Variação de elevação máxima: </label>
 					 	<input type="number" name="elevacao">
+					 </div>
+					 <div class="col-md-12">
+					 	<label>Selecione as categorias </label>
+					 	<select name="categoria">
+					 		<option value="0">Geral apenas</option>
+					 		<option value="1">Com categorias de idade</option>
+					 	</select>
 					 </div>
 				 	 <div class="col-12">
 				 		<hr>

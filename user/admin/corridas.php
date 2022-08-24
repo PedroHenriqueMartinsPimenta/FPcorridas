@@ -66,6 +66,7 @@
 				      <td width="90">Distancia</td>
 				      <td width="70">Edital</td>
 				      <td width="80">Elevação</td>
+				      <td width="100">Categorias</td>
 				      <td width="100">Inscritos</td>
 				      <td width="130">Resultado</td>
 				      <td width="100">Ativa/ desativa</td>
@@ -101,6 +102,13 @@
 				  					<td><?php echo $row['DISTANCIA']?> Km</td>
 				  					<td><a href="<?php echo $row['EDITAL']?>" target="_blank">Edital</a></td>
 				  					<td><?php echo $row['ELEVACAO']?></td>
+				  					<td><?php 
+				  						if ($row['CATEGORIA'] == 1) {
+				  							echo "Idade";
+				  						}else{
+				  							echo "Geral";
+				  						}
+				  					?></td>
 				  					<td><a href="inscritos.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning">Inscritos</a></td>
 				  					<td><a href="resultado.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning">Resultados</a></td>
 				  					<td><a href="../../controller/corridas.php?id=2&codigo=<?php echo $row['CODIGO']?>&status=<?php echo $row['DISPONIVEL']?>" class="btn btn-warning">
