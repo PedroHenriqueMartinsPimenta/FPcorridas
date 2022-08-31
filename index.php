@@ -62,9 +62,7 @@
 							  <div class="card-body">
 							    <h5 class="card-title"><?php echo $row['NOME']?></h5>
 							    <p class="card-text"><?php echo substr($row['DESCRICAO'], 0, 100)?></p>
-							    <p class="card-text" style="text-align: right;"><b>No dia: <?php echo $row['DATA']?></b></p>
-							    <p class="card-text" style="text-align: right;"><b>Inscrições até: <?php echo $row['INSC_MAX']?></b></p>
-							    <p class="card-text" style="text-align: right;"><b>R$ <?php echo $row['PRECO']?></b></p>
+							    <p class="card-text btn-warning" style="text-align: right; display: inline-block;" id="infos"><b><?php echo $row['DATA']?></b></p>
 							    <a href="corrida.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning col-12">Saiba mais</a>
 							  </div>
 							</div>
@@ -95,7 +93,46 @@
 				<a href="?mais=8" class="btn btn-warning">Ver mais</a>
 			</div>
 		</div>
-		
+		<hr>
+		<div class="row">
+			<div class="col-md-12">
+				<h4>Organizadores</h4>
+			</div>
+		</div>
+			
+		<div class="row" style="position: relative; margin: 0 auto;">
+			<div class="col-md-5 card">
+				<div class="row card-body" align="center">
+					<div class="col-12">
+						<img src="<?php echo $url?>layout/layout_files/images/org2.jpg" id="img_org">
+					</div>
+					<div class="col-12 mt-3">
+						<h5>Fabiana Oliveira da Silva</h5>
+					</div>
+					<div class="col-12">
+						<p>
+							Profissional de educação física, cursando no IFCE, atleta de alto rendimento e premiada nas corridas regionais, nacionais e internacionais.
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-5 card ml-md-1">
+				<div class="row card-body" align="center">
+					<div class="col-12">
+						<img src="<?php echo $url?>layout/layout_files/images/org1.jpg" id="img_org">
+					</div>
+					<div class="col-12 mt-3">
+						<h5>Pedro Henrique Martins Pimenta</h5>
+					</div>
+					<div class="col-12">
+						<p>
+							Profissional em TI, analista de dados, cursando Sistemas de Informação no IFCE, desenvolvedor e criador de soluções digitais.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 		
 	<?php
 	include_once('content/footer.php');

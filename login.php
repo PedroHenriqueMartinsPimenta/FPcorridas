@@ -6,7 +6,7 @@
 	?>
 	<div class="row">
 		<div class="col-12">
-			<h3>Cadastre-se e inscreva-se nas corridas</h3>
+			<h3>Faça o login para se inscrever</h3>
 		</div>
 	</div>
 	<div class="row">
@@ -27,7 +27,7 @@
 							<input type="password" name="senha" id="senha" class="form-control">
 						</div>
 						<div class="col-12 mb-3" style="display: inline-block; text-align: right;">
-							<a href="#">Esqueci minha senha</a>
+							<a href="esqueci_senha.php">Esqueci minha senha</a>
 						</div>
 						<div class="col-12">
 							<button type="submit" class="col-md-2">Entrar</button>

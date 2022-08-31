@@ -1,4 +1,5 @@
 function enviar(){
+	console.log(document.querySelector("#email").value)
 	if(document.querySelector("#email").value == document.querySelector("#conf_email").value){
 		if(document.querySelector("#senha").value == document.querySelector("#conf_senha").value){
 			if(document.querySelector("#senha").value.length >= 6){

@@ -129,6 +129,8 @@
 	                            <nav class="menubar">
 	                                <ul id="menu-menu" class="menu-wrap menu-principal">
 	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Corridas</a></li>
+	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Parceiros</a></li>
+	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Sobre nós</a></li>
 										
 	                                	<?php
 											if(isset($_SESSION['user'])){

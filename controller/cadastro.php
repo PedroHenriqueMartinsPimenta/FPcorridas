@@ -28,5 +28,25 @@
 			$_SESSION['erro'] = "Erro: " . mysqli_error($con);
 			header('location: ../cadastro.php');
 		}
+	}else if ($id == 2) {
+		// Cadastrar cliente
+		$codigo = $_GET['codigo'];
+		$nome = $_POST['nome'];
+		$sobrenome = $_POST['sobrenome'];
+		$email = $_POST['email'];
+		$nasc = $_POST['nasc'];
+		$phone = $_POST['phone'];
+		$sexo = $_POST['sexo'];
+		$senha = md5($_POST['senha']);
+
+		$sql = "INSERT INTO usuario (NOME, SOBRENOME, SEXO, EMAIL, NASC, PASSWORD, TELEFONE, PERMISSAO) VALUES('$nome', '$sobrenome', '$sexo', '$email', '$nasc', '$senha', '$phone', 0)";
+		$query = mysqli_query($con, $sql);
+		if ($query) {
+			$_SESSION['sucess'] = "Cadastrado com sucesso, faça o login!";
+			header('location: ../inscricao.php?codigo=' . $codigo);
+		}else{
+			$_SESSION['erro'] = "Erro: " . mysqli_error($con);
+			header('location: ../inscricao.php?codigo=' . $codigo);
+		}
 	}
 ?>

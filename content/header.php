@@ -76,6 +76,25 @@ td{
 .btn-warning{
 	background-color: #EB4501 !important;
 }
+#infos{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	font-size: 12px;
+	margin-bottom: 5px;
+	padding: 3px;
+	border-radius: 20px;
+	box-shadow: #EB4501 1px 1px 10px 1px;
+}
+#img_org{
+	width: 50%;
+	border-radius: 100%;
+	box-shadow: #EB4501 1px 1px 20px 1px;
+
+}
+#form-checkout input{
+	margin-bottom: 10px;
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" id="wp-block-library-css" href="<?php echo $url?>layout/layout_files/style.min.css" type="text/css" media="all">
