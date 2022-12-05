@@ -1,0 +1,6 @@
+{
+    "require": {
+        "monolog/monolog": "2.0.*",
+        "mercadopago/dx-php": "^2.4"
+    }
+}

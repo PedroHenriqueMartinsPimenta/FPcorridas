@@ -36,15 +36,16 @@
 				<div class="col-md-6 mb-2">
 				
 				<?php
-					$hoje = date("YYYY-mm-dd");
+					$hoje = date("Y-m-d");
 					if ($qtd_ins > 0) {
 						?>
-						<a href="user/corridas.php" class="btn btn-warning col-md-3">Acompanhar</a>
+						<a href="resultado.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning col-md-3">Acompanhar</a>
 						<?php
-					}else if($row['INSC_MAX'] > $hoje){
+					}else if($row['INSC_MAX'] < $hoje){
 						?>
-						<b>Incrições encerradas</b>
-						<a href="resutado.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning col-md-3">Resultado</a>
+						<b  style="position: relative; top: -10px; background-color: red; color: white; padding: 10px; border-radius: 0px 0px 10px 10px; width: 100%; display: inline-block; text-align: center;">Incrições encerradas</b> <br>
+						<a href="resultado.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning col-md-3">Resultado</a>
+
 						<?php
 					}else{
 						?>
@@ -88,9 +89,9 @@
 					<?php 
 						$sql = "SELECT * FROM parceria WHERE prova_CODIGO = $codigo";
 						$query = mysqli_query($con, $sql);
-						while ($row = mysqli_fetch_array($query)) {
+						while ($row_parceiro = mysqli_fetch_array($query)) {
 							?>
-							<img src="<?php echo $row['LOGO']?>" width="100px" style="display: inline-block; margin-right: 10px;">
+							<img src="<?php echo $row_parceiro['LOGO']?>" style="display: inline-block; margin-right: 10px; height: 100px;">
 							<?php
 						}
 					?>
@@ -102,12 +103,12 @@
 					<?php
 					if ($qtd_ins > 0) {
 						?>
-						<a href="user/corridas.php" class="btn btn-warning col-12" style="padding: 30px">Acompanhar</a>
+						<a href="resultado.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning col-12" style="padding: 30px">Acompanhar</a>
 						<?php
-					}else if($row['INSC_MAX'] > $hoje){
+					}else if($row['INSC_MAX'] < $hoje){
 						?>
 						<b>Incrições encerradas</b>
-						<a href="resutado.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning col-md-3">Resultado</a>
+						<a href="resultado.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning col-12" style="padding: 30px">Resultado</a>
 						<?php
 					}else{
 						?>	

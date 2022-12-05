@@ -17,12 +17,13 @@
 			$edital = $_FILES['edital'];
 			$elevacao = $_POST['elevacao'];
 			$categoria = $_POST['categoria'];
+			$pg_link = $_POST['pg_link'];
 			$midia = $_FILES['midia'];
 			$usuario = $_SESSION['user']['codigo'];
 			$url_edital = upload($edital, $url);
 			$url_midia = upload($midia, $url);
 
-			$sql = "INSERT INTO prova (NOME, DATA, DESCRICAO, INSC_MIN, INSC_MAX, PRC_INSCRICAO, DISTANCIA, EDITAL, ELEVACAO, CATEGORIA, usuario_CODIGO) VALUES('$nome', '$dia', '$desc', '$ins_inicio', '$ins_fim', $preco, $distancia, '$url_edital', $elevacao, $categoria, $usuario)";
+			$sql = "INSERT INTO prova (NOME, DATA, DESCRICAO, INSC_MIN, INSC_MAX, PRC_INSCRICAO, DISTANCIA, EDITAL, ELEVACAO, CATEGORIA, PG_LINK, usuario_CODIGO) VALUES('$nome', '$dia', '$desc', '$ins_inicio', '$ins_fim', $preco, $distancia, '$url_edital', $elevacao, $categoria,'$pg_link', $usuario)";
 			echo $sql;
 			$query = mysqli_query($con, $sql);
 			if($query){

@@ -53,12 +53,20 @@
 				}
 				$query = mysqli_query($con, $sql);
 				$eventos_num = mysqli_num_rows($query);
+				$hoje = date('Y-m-d');
 				if( $eventos_num > 0){
 					while ($row = mysqli_fetch_array($query)) {
 						?>
 						<div class="col-md-3 mb-5">
 							<div class="card corrida">
 							  <img class="card-img-top" src="<?php echo $row['LINK']?>" alt="Card image cap" width="500px">
+							  <?php 
+							  	if ($row['INSC_MAX'] < $hoje) {
+							  		?>
+							  		<b  style="position: relative; top: -10px; background-color: red; color: white; padding: 10px; border-radius: 0px 0px 10px 10px; width: 100%; display: inline-block; text-align: center;">Incrições encerradas</b>
+							  		<?php
+							  	}
+							   ?>
 							  <div class="card-body">
 							    <h5 class="card-title"><?php echo $row['NOME']?></h5>
 							    <p class="card-text"><?php echo substr($row['DESCRICAO'], 0, 100)?></p>
@@ -100,8 +108,8 @@
 			</div>
 		</div>
 			
-		<div class="row" style="position: relative; margin: 0 auto;">
-			<div class="col-md-5 card">
+		<div class="row" style="position: relative;">
+			<div class="col-md-4 card" style="margin: 0 auto;">
 				<div class="row card-body" align="center">
 					<div class="col-12">
 						<img src="<?php echo $url?>layout/layout_files/images/org2.jpg" id="img_org">
@@ -111,13 +119,13 @@
 					</div>
 					<div class="col-12">
 						<p>
-							Profissional de educação física, cursando no IFCE, atleta de alto rendimento e premiada nas corridas regionais, nacionais e internacionais.
+							Profissional de Educação Física, cursando no IFCE, atleta de alto rendimento e premiada nas corridas regionais, estaduais, nacionais e internacionais.
 						</p>
 					</div>
 				</div>
 			</div>
 			
-			<div class="col-md-5 card ml-md-1">
+			<div class="col-md-4 card"  style="margin: 0 auto;">
 				<div class="row card-body" align="center">
 					<div class="col-12">
 						<img src="<?php echo $url?>layout/layout_files/images/org1.jpg" id="img_org">
@@ -128,6 +136,21 @@
 					<div class="col-12">
 						<p>
 							Profissional em TI, analista de dados, cursando Sistemas de Informação no IFCE, desenvolvedor e criador de soluções digitais.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 card" style="margin: 0 auto;">
+				<div class="row card-body" align="center">
+					<div class="col-12">
+						<img src="<?php echo $url?>layout/layout_files/images/org3.png" id="img_org">
+					</div>
+					<div class="col-12 mt-3">
+						<h5>Marcos Ribeiro Ferreira</h5>
+					</div>
+					<div class="col-12">
+						<p>
+							Profissional em Educação Física, cursando fiseoterapia e atleta de alto rendimento, premiado em provas regionais, estaduais, nacionais e internacionais.
 						</p>
 					</div>
 				</div>

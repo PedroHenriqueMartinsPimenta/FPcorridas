@@ -17,9 +17,10 @@
 			$distancia = $_POST['distancia'];
 			$elevacao = $_POST['elevacao'];
 			$categoria = $_POST['categoria'];
+			$pg_link = $_POST['pg_link'];
 			$usuario = $_SESSION['user']['codigo'];
 
-			$sql = "UPDATE prova SET NOME = '$nome', DATA = '$dia', DESCRICAO = '$desc', INSC_MIN = '$ins_inicio', INSC_MAX = '$ins_fim', PRC_INSCRICAO = $preco, DISTANCIA = $distancia, ELEVACAO = $elevacao, CATEGORIA = $categoria, usuario_CODIGO = $usuario WHERE CODIGO = $codigo";
+			$sql = "UPDATE prova SET NOME = '$nome', DATA = '$dia', DESCRICAO = '$desc', INSC_MIN = '$ins_inicio', INSC_MAX = '$ins_fim', PRC_INSCRICAO = $preco, DISTANCIA = $distancia, ELEVACAO = $elevacao, CATEGORIA = $categoria, PG_LINK = '$pg_link', usuario_CODIGO = $usuario WHERE CODIGO = $codigo";
 			$query = mysqli_query($con, $sql);
 			if($query){
 				$_SESSION['sucess'] = "Corrida atualizada";

@@ -64,6 +64,10 @@
 					 		<option value="1">Com categorias de idade</option>
 					 	</select>
 					 </div>
+					 <div class="col-md-12">
+					 	<label>Link de pagamento: </label>
+					 	<input type="text" name="pg_link">
+					 </div>
 				 	 <div class="col-12">
 				 		<hr>
 				 		<h3>Mídia da corrida</h3>

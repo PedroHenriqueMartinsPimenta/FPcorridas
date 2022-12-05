@@ -66,6 +66,7 @@
 				      <td width="90">Distancia</td>
 				      <td width="70">Edital</td>
 				      <td width="80">Elevação</td>
+				      <td width="150">Link de confirmação</td>
 				      <td width="100">Categorias</td>
 				      <td width="100">Inscritos</td>
 				      <td width="130">Resultado</td>
@@ -102,6 +103,7 @@
 				  					<td><?php echo $row['DISTANCIA']?> Km</td>
 				  					<td><a href="<?php echo $row['EDITAL']?>" target="_blank">Edital</a></td>
 				  					<td><?php echo $row['ELEVACAO']?></td>
+				  					<td><a href="<?php echo $url . "user/pagamento/confirm.php?codigo=" . $row['CODIGO']?>">Link de confirmação de pagamento</a></td>
 				  					<td><?php 
 				  						if ($row['CATEGORIA'] == 1) {
 				  							echo "Idade";

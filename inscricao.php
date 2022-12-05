@@ -6,11 +6,23 @@
 	$codigo = $_GET['codigo'];
 	if (isset($_SESSION['user'])) {
 		include_once('controller/conexao.php');
+		$user = $_SESSION['user']['codigo'];
+		$sql = "SELECT * FROM inscrito WHERE prova_CODIGO = $codigo AND atleta_CODIGO = $user";
+		$query = mysqli_query($con, $sql);
+		if(mysqli_num_rows($query) > 0) {
+			$_SESSION['sucess'] = "Você já está inscrito :)";
+			?>
+			<script type="text/javascript">
+				window.location.href = "<?php echo $url ?>user/minhas_corridas.php";
+			</script>
+			<?php
+		}
 		$sql = "SELECT * FROM prova WHERE CODIGO = $codigo";
 		$query = mysqli_query($con, $sql);
 		if (mysqli_num_rows($query) > 0) {
 			$row = mysqli_fetch_array($query);
 			?>
+			
 			<div class="row">
 				<div class="col-md-12">
 					<h4>Inscrição na <?php echo $row['NOME']?></h4>
@@ -19,70 +31,51 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<h5>Confirmação e pagamento de inscrição</h5>
+					<h5>Confirmação de inscrição</h5>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-md-12">
-					<style>
-								    #form-checkout {
-								      display: flex;
-								      flex-direction: column;
-								      max-width: 600px;
-								    }
-
-								    .container_pagamento {
-								    	height: 40px;
-								      display: inline-block;
-								      border: 1px solid rgba(118, 118, 118,0.5);
-								      border-radius: 2px;
-								      margin-bottom: 10px;
-								      padding-left: 10px;
-								    }
-								  </style>
-					<form id="form-checkout">
-						<?php 
-						if ($row['PRC_INSCRICAO'] > 0) {
-							?>
-								  
-								    <div id="form-checkout__cardNumber" class="container_pagamento"></div>
-								    <div id="form-checkout__expirationDate" class="container_pagamento"></div>
-								    <div id="form-checkout__securityCode" class="container_pagamento"></div>
-								    <input type="text" id="form-checkout__cardholderName" />
-								    <select id="form-checkout__issuer"></select>
-								    <select id="form-checkout__installments"></select>
-								    <select id="form-checkout__identificationType"></select>
-								    <input type="text" id="form-checkout__identificationNumber" />
-								    <input type="email" id="form-checkout__cardholderEmail" />
-
-								    <progress value="0" class="progress-bar">Carregando...</progress>
-								  
-								  <script type="text/javascript">
-								  	const valor = <?php echo json_encode($row['PRC_INSCRICAO'])?>;
-								  	const codigo = <?php echo json_encode($codigo)?>;
-								  </script>
-								  <script src="https://sdk.mercadopago.com/js/v2"></script>
-								  <script src="script/mercadopago.js"></script>
+					<form action="controller/inscricao.php?id=1&codigo=<?php echo $codigo?>" method="post">
+						<?php
+							if($row['PRC_INSCRICAO'] == 0){
+								?>
+									<h5>Esse evento é gratuito :)</h5>
+								<?php
+							}
+						?>
+						<h5 id="valor">Total: R$ <?php echo $row['PRC_INSCRICAO']?></h5>
+						<label>Kit</label>
+						<select name="kit" id="kit" onchange="atualiza(this)">
 							<?php
-						}else{
+								$sql = "SELECT * FROM brinde";
+								$query = mysqli_query($con,$sql);
+								$brindes = array();
+								while($row_brinde = mysqli_fetch_array($query)){
+									$brindes[$row_brinde['CODIGO']] = $row_brinde['VALOR'];
+									?>
+									<option value="<?php echo $row_brinde['CODIGO']?>"><?php echo $row_brinde['DESCRICAO'] . " - R$" . $row_brinde['VALOR']?></option>
+									<?php
+								}
 							?>
-								<h5>Esse eventos é gratuito :)</h5>
-								
-							<?php
-						}
-					?>
-					<br>
-					<br>
-					<label for="confirm"><input type="checkbox" name="confirm" id="confirm" required>
-					Estou de acordo com os <a href="termos.php" style="color: #EB4501">termos</a></label>
-					<br>
-					<input type="submit" id="form-checkout__submit" value="Increve-se" class="col-md-3">
+						</select>
+						<br>
+						<label for="confirm"><input type="checkbox" id="confirm" required>
+						Estou de acordo com os <a href="termos.php" style="color: #EB4501">termos</a></label>
+						<br>
+						<br>
+						<input type="submit" id="form-checkout__submit" value="Increve-se" class="col-md-3">
 					</form>
-					
 				</div>
+				<script type="text/javascript">
+					function atualiza(input) {
+						var valor = parseInt(<?php echo json_encode($row['PRC_INSCRICAO'])?>);
+						var brindes = <?php echo json_encode($brindes)?>;
+						document.querySelector('#valor').innerHTML = "Total: R$" + (valor + parseInt(brindes[input.value]));
+					}
+				</script>
 			</div>
-			
 			<?php
 		}else{
 			?>

@@ -129,6 +129,8 @@
 	                            <nav class="menubar">
 	                                <ul id="menu-menu" class="menu-wrap menu-principal">
 	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Corridas</a></li>
+	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>resultado.php">Resultados</a></li>
+
 	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Parceiros</a></li>
 	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Sobre nós</a></li>
 										
@@ -138,7 +140,7 @@
 												<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item menu-item-has-children menu-item-23 dropdown userindex"><a href="#">Área atleta</a><span class="mobi_drop d-lg-none"><a href="#" class="fa"><img src="<?php echo $url?>layout/layout_files/images/icon_seta2.png" width="10px"></a></span>
 												<ul class="dropdown-menu">
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user">Painel</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Minhas corridas</a></li>
+													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/minhas_corridas.php">Minhas corridas</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Chat</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Meus dados</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Minha página</a></li>
@@ -154,6 +156,7 @@
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/corridas.php">Eventos</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/parceiros.php">Patrocionadores</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/brinde.php">Brindes</a></li>
+													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/admin/inscritos.php">Inscrições</a></li>
 												</ul>
 												</li>
 													<?php
