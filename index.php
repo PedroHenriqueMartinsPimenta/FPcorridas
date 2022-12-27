@@ -70,7 +70,7 @@
 							  <div class="card-body">
 							    <h5 class="card-title"><?php echo $row['NOME']?></h5>
 							    <p class="card-text"><?php echo substr($row['DESCRICAO'], 0, 100)?></p>
-							    <p class="card-text btn-warning" style="text-align: right; display: inline-block;" id="infos"><b><?php echo $row['DATA']?></b></p>
+							    <p class="card-text btn-warning" style="text-align: right; display: inline-block;" id="infos"><b><?php echo substr($row['DATA'], 8,2) . "/" . substr($row['DATA'], 5,2) . "/" . substr($row['DATA'], 0,4)?></b></p>
 							    <a href="corrida.php?codigo=<?php echo $row['CODIGO']?>" class="btn btn-warning col-12">Saiba mais</a>
 							  </div>
 							</div>

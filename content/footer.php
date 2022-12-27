@@ -28,7 +28,7 @@
 			<div class="row padding-top-20 padding-bottom-10 ">
 				<div class="col-md-6 text-left">
 																<p class="copyright">
-						Copyright © 2022 FP Corridas 						</p>
+						Copyright © <?php echo date('Y'); ?> FP Corridas 						</p>
 									</div>
 
 				<div class="col-md-6">

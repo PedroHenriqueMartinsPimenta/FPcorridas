@@ -3,17 +3,17 @@
 																						<!-- Start Contact Info -->
 								 
 									<div class="widget widget_info">
-										<a href="mailto:ofabiana884@gmail.com">
+										<a href="mailto:<?php echo $fp_email ?>">
 											<i class="fa"><img src="<?php echo $url?>layout/layout_files/images/icon_email.png" width="10px"></i>
-											<span>ofabiana884@gmail.com</span>
+											<span><?php echo $fp_email ?></span>
 										</a>
 									</div>
 																
 								 
 									<div class="widget widget_info">
-										<a href="tel:(88) 9 9491-8261">
+										<a href="tel:<?php echo $fp_tel ?>">
 											<i class="fa"><img src="<?php echo $url?>layout/layout_files/images/icon_telefone.png" width="10px"></i>
-											<span>(88) 9 9491-8261</span>
+											<span><?php echo $fp_tel ?></span>
 										</a>
 									</div>
 																<!-- /End Contact Info -->
@@ -74,8 +74,8 @@
 	                            </div>
 	                        </div>
 	                        <div class="mobile-logo">
-	                            <a href="#" class="navbar-brand">
-	                                </a><a href="#" class="custom-logo-link" rel="home"><img src="<?php echo $url?>layout/layout_files/cropped-cropped-FP-removebg-preview-2.png" class="custom-logo navbar-brand" alt="FP Corridas" srcset="<?php echo $url?>layout/layout_files/cropped-cropped-FP-removebg-preview-2.png"></a>	                                	                                        <p class="site-description">Corridas online e parceiras</p>
+	                            <a href="<?php echo $url?>" class="navbar-brand">
+	                                </a><a href="<?php echo $url?>" class="custom-logo-link" rel="home"><img src="<?php echo $url?>layout/layout_files/cropped-cropped-FP-removebg-preview-2.png" class="custom-logo navbar-brand" alt="FP Corridas" srcset="<?php echo $url?>layout/layout_files/cropped-cropped-FP-removebg-preview-2.png"></a>	                                	                                        <p class="site-description">Corridas online e parceiras</p>
 	                                	                            
 	                        </div>
 	                        <div class="menu-toggle-wrap">
@@ -105,7 +105,7 @@
 	                <div class="row">
 	                    <div class="col-md-3 my-auto">
 	                    	<div class="logo">
-	                            <a href="#" class="custom-logo-link" rel="home"><img width="450" src="<?php echo $url?>layout/layout_files/cropped-cropped-FP-removebg-preview-2.png" class="" alt="FP Corridas" srcset="<?php echo $url?>layout/layout_files/cropped-cropped-FP-removebg-preview-2.png"></a>		                            <p class="site-description">Corridas online e parceiras</p>
+	                            <a href="<?php echo $url?>" class="custom-logo-link" rel="home"><img width="450" src="<?php echo $url?>layout/layout_files/cropped-cropped-FP-removebg-preview-2.png" class="" alt="FP Corridas" srcset="<?php echo $url?>layout/layout_files/cropped-cropped-FP-removebg-preview-2.png"></a>		                            <p class="site-description">Corridas online e parceiras</p>
 		                        	                        </div>
 	                    </div>
 	                    <div class="col-md-9 my-auto position-lg-relative position-static">
@@ -131,7 +131,7 @@
 	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Corridas</a></li>
 	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>resultado.php">Resultados</a></li>
 
-	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Parceiros</a></li>
+	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>parceria.php">Ser parceiro</a></li>
 	                                	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17 index" id="index"><a href="<?php echo $url?>">Sobre nós</a></li>
 										
 	                                	<?php
@@ -141,10 +141,10 @@
 												<ul class="dropdown-menu">
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user">Painel</a></li>
 													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/minhas_corridas.php">Minhas corridas</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Chat</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Meus dados</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Minha página</a></li>
-													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">$ Carteira</a></li>
+												<!--	<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">Chat</a></li> -->
+													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>user/meus_dados.php">Meus dados</a></li>
+													<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>page.php?id=<?php echo $_SESSION['user']['codigo'] ?>">Minha página</a></li>
+													<!-- <li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="<?php echo $url?>">$ Carteira</a></li> -->
 												</ul>
 												</li>
 												
@@ -176,22 +176,7 @@
 										?>
 									</ul>                               
 	                            </nav>
-								<div class="menu-right">
-									<ul class="wrap-right">
-										<li class="search-button">
-	                                        <a href="#" id="view-search-btn" class="header-search-toggle"><i class="fa"><img src="<?php echo $url?>layout/layout_files/images/icon_pesquisa.png" style="max-width:20px"></i></a>
-	                                        <!-- Quik search -->
-	                                        <div class="view-search-btn header-search-popup">
-	                                            <form method="get" class="search-form" action="https://fpcorridas.000webhostapp.com/MVP_06082022/" aria-label=" Pesquisa do site">
-	                                                <span class="screen-reader-text">Pesquisar por:</span>
-	                                                <input type="search" class="search-field header-search-field" placeholder="Digite para pesquisar" name="s" id="popfocus" value="" autofocus="">
-	                                                <a href="#" class="close-style header-search-close"></a>
-	                                            </form>
-	                                        </div>
-	                                        <!-- / -->
-	                                    </li>
-																			</ul>						
-								</div>
+								
 	                        </div>
 	                    </div>
 	                </div>

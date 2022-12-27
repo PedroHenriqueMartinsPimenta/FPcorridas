@@ -66,7 +66,7 @@
 				  			<?php } ?>
 				  					<td><?php echo $row['CODIGO']?></td>
 				  					<td><?php echo $row['NOME']?></td>
-				  					<td><?php echo $row['DATA']?></td>
+				  					<td><?php echo substr($row['DATA'], 8,2) . "/" . substr($row['DATA'], 5,2) . "/" . substr($row['DATA'], 0,4)?></td>
 				  					<td><?php echo $row['DT_INSCRICAO']?></td>
 				  					<td><a href="../resultado.php?codigo=<?php echo $row['PROVA_CODIGO']?>" class="btn btn-warning">Resultados</a></td>
 				  					<td>

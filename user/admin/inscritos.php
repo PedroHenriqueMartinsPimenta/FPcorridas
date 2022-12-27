@@ -143,7 +143,7 @@
 						<label>Selecione a prova: </label>
 						<select name="codigo">
 						<?php
-							$sql = "SELECT * FROM prova WHERE DISPONIVEL = 1";
+							$sql = "SELECT * FROM prova WHERE DISPONIVEL = 1  ORDER BY CODIGO DESC";
 							$query = mysqli_query($con, $sql);
 							while ($row = mysqli_fetch_array($query)) {
 								?>

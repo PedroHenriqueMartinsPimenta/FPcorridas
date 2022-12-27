@@ -55,28 +55,37 @@
 				?>
 				<br> <br>
 				<b>Valor inscrição: R$ <?php echo $row['PRECO']?></b><br>
-				<b>Inscrições: <?php echo $row['INSC_MIN']?> - <?php echo $row['INSC_MAX']?></b>
+				<b>Dia do evento: <?php echo substr($row['DATA'], 8,2) . "/" . substr($row['DATA'], 5,2) . "/" . substr($row['DATA'], 0,4)?></b><br>
+				<b>Inscrições: <?php echo substr($row['INSC_MIN'], 8,2) . "/" . substr($row['INSC_MIN'], 5,2) . "/" . substr($row['INSC_MIN'], 0,4)?> - <?php echo substr($row['INSC_MAX'], 8,2) . "/" . substr($row['INSC_MAX'], 5,2) . "/" . substr($row['INSC_MAX'], 0,4)?></b>
 				<p>
 					<?php echo $row['DESCRICAO']?>
 				</p>
+				<br>
 				<h4>Premiação:</h4>
+				<?php if ($row['PRECO'] > 0){ 
+					?>
+					<b style="color: red;position: absolute; margin-top: -20px; margin-left: 10px;">Tem premiação financeira!</b>
+					<?php
+				 } ?>
 				<ul>
 					<li>1ª,2ª e 3ª geral</li>
 					<li>1ª,2ª e 3ª geral feminino</li>
 				</ul>
-				<b>Categorias:</b>
-				<ul>
+				
 					<?php
 						if ($row['CATEGORIA'] == 1) {
 							?>
-							<li>1ª de 18 - 30 anos</li>
-							<li>1ª de 31 - 40 anos</li>
-							<li>1ª de 41 - 60 anos</li>
-							<li>1ª de +60 anos</li>
+							<b>Categorias:</b>
+							<ul>
+								<li>1ª de 18 - 30 anos</li>
+								<li>1ª de 31 - 40 anos</li>
+								<li>1ª de 41 - 60 anos</li>
+								<li>1ª de +60 anos</li>
+
+							</ul>
 							<?php
 						}
 					?>
-				</ul>
 				<p>
 					<b>Regulamento: </b><a href="<?php echo $row['EDITAL']?>" target="_blank">Clique aqui</a>
 				</p>

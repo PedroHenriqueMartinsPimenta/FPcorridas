@@ -39,7 +39,7 @@
 						<label>Selecione a corrida: <span id="required">*</span></label>
 						<select name="corrida">
 							<?php
-								$sql = "SELECT * FROM prova WHERE DISPONIVEL = 1";
+								$sql = "SELECT * FROM prova WHERE DISPONIVEL = 1  ORDER BY CODIGO DESC";
 								$query = mysqli_query($con, $sql);
 								while($row = mysqli_fetch_array($query)){
 									?>

@@ -103,7 +103,7 @@
 				  					<td><?php echo $row['DISTANCIA']?> Km</td>
 				  					<td><a href="<?php echo $row['EDITAL']?>" target="_blank">Edital</a></td>
 				  					<td><?php echo $row['ELEVACAO']?></td>
-				  					<td><a href="<?php echo $url . "user/pagamento/confirm.php?codigo=" . $row['CODIGO']?>">Link de confirmação de pagamento</a></td>
+				  					<td><a href="<?php echo $url . "user/pagamento/confirm.php?p=" . base64_encode($row['CODIGO'])?>">Link de confirmação de pagamento</a></td>
 				  					<td><?php 
 				  						if ($row['CATEGORIA'] == 1) {
 				  							echo "Idade";

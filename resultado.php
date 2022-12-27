@@ -13,7 +13,7 @@
 				<label>Selecione a prova: </label>
 				<select name="codigo">
 					<?php
-						$sql = "SELECT * FROM prova WHERE DISPONIVEL = 1";
+						$sql = "SELECT * FROM prova WHERE DISPONIVEL = 1 ORDER BY CODIGO DESC";
 						$query = mysqli_query($con, $sql);
 						while ($row = mysqli_fetch_array($query)) {
 							?>
@@ -94,7 +94,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -168,7 +168,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -247,7 +247,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -322,7 +322,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -398,7 +398,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -473,7 +473,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -549,7 +549,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -624,7 +624,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -700,7 +700,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
@@ -775,7 +775,7 @@
 				  				<tr>
 				  					<td><?php echo $i?>ª</td>
 				  					<td id="numero<?php echo $row['NUMERO']?>"><?php echo $row['NUMERO']?></td>
-				  					<td><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></td>
+				  					<td><a href="page.php?id=<?php echo $row['atleta_CODIGO']; ?>"><?php echo $row['NOME'] . " " . $row['SOBRENOME']?></a></td>
 				  					<td><?php echo $row['IDADE']?> anos</td>
 				  					<td><?php echo $row['DISTANCIA']?>Km</td>
 				  					<td><?php echo $row['PROVA']?></td>
