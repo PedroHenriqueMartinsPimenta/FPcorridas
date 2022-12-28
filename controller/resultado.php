@@ -9,12 +9,11 @@
 			// Adiciona novo parceiro
 			$codigo = $_GET['codigo'];
 			$arquivo = $_FILES['arquivo'];
-			$tempo = $_POST['tempo'];
 			$arquivo_url = upload($arquivo, $url);
 			$data = date('Y-m-d h:i:s');
-			$hora = intval(substr($tempo, 0,2));
-			$minutos = intval(substr($tempo, 3,2));
-			$segundos = intval(substr($tempo, 6,2));
+			$hora = $_POST['hora'];
+			$minutos = $_POST['minuto'];
+			$segundos = $_POST['segundo'];
 
 			$sql = "INSERT INTO resultado (DATA, LINK, HORA, MINUTO, SEGUNDO,VALIDADO, PAGO, PG_COMPROVANTE, inscrito_CODIGO) VALUES('$data', '$arquivo_url', $hora, $minutos, $segundos, 0, 0, '0', $codigo)";
 			

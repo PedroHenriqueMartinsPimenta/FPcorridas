@@ -24,7 +24,7 @@
 			$url_midia = upload($midia, $url);
 
 			$sql = "INSERT INTO prova (NOME, DATA, DESCRICAO, INSC_MIN, INSC_MAX, PRC_INSCRICAO, DISTANCIA, EDITAL, ELEVACAO, CATEGORIA, PG_LINK, usuario_CODIGO) VALUES('$nome', '$dia', '$desc', '$ins_inicio', '$ins_fim', $preco, $distancia, '$url_edital', $elevacao, $categoria,'$pg_link', $usuario)";
-			echo $sql;
+			
 			$query = mysqli_query($con, $sql);
 			if($query){
 				$sql = "SELECT CODIGO FROM prova WHERE EDITAL = '$url_edital'";

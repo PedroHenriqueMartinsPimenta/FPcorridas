@@ -17,7 +17,11 @@
 				<div class="row">
 					<div class="col-md-6 mb-5">
 						<label>Informe o seu tempo (HH:MM:SS):</label>
-						<input type="time" name="tempo" step="1" required>
+						<div class="row" style="font-weight: bolder; font-size: 30px; margin: 0 auto; text-align: center">
+							<input type="number" name="hora" required class="col-3" placeholder="Horas"> :
+							<input type="number" name="minuto" required class="col-3" placeholder="Minutos"> : 
+							<input type="number" name="segundo" required class="col-3" placeholder="Segundos">
+						</div>
 					</div>
 					<div class="col-md-6 mb-5">
 						<label>Selecione o treino: </label>

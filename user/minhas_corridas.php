@@ -38,11 +38,11 @@
 				  <thead>
 				    <tr>
 				      <th width="100px">Número de peito</th>
-				      <td width="200px">Nome</td>
+				      <td width="200px">Nome</td>	
+				      <td width="250px">Andamento</td>
 				      <td width="110px">Data do evento</td>		
 				      <td width="110px">Data de inscrição</td>	
-				      <td width="150px">Resultados</td>		
-				      <td width="250px">Andamento</td>
+				      <td width="150px">Resultados</td>	
 				      <td width="250px">Cancelamento</td>				
 				    </tr>
 				  </thead>
@@ -66,9 +66,6 @@
 				  			<?php } ?>
 				  					<td><?php echo $row['CODIGO']?></td>
 				  					<td><?php echo $row['NOME']?></td>
-				  					<td><?php echo substr($row['DATA'], 8,2) . "/" . substr($row['DATA'], 5,2) . "/" . substr($row['DATA'], 0,4)?></td>
-				  					<td><?php echo $row['DT_INSCRICAO']?></td>
-				  					<td><a href="../resultado.php?codigo=<?php echo $row['PROVA_CODIGO']?>" class="btn btn-warning">Resultados</a></td>
 				  					<td>
 				  						<?php
 				  							if ($row['PAGO'] == 0) {
@@ -76,21 +73,35 @@
 				  									<a href="<?php echo $row['PG_LINK']?>" target="_blank" class="btn btn-success">Confirmar com o pagamento</a>
 				  								<?php
 				  							}else if($row['PAGO'] == 1){
-				  								$inscrito = $row['CODIGO'];
-				  								$sql = "SELECT * FROM resultado WHERE inscrito_CODIGO = $inscrito";
-				  								$query_inscrito = mysqli_query($con, $sql);
-				  								if (mysqli_num_rows($query_inscrito) == 0 && $row['DATA'] >= date('Y-m-d')) {
-				  									?>
-				  									<a href="enviar_prova.php?codigo=<?php echo $inscrito?>" class="btn btn-warning">Envie seu resultado!</a>
+				  								$hoje = date('Y-m-d');
+				  								if ($row['DATA'] == $hoje) {
+					  								$inscrito = $row['CODIGO'];
+					  								$sql = "SELECT * FROM resultado WHERE inscrito_CODIGO = $inscrito";
+					  								$query_inscrito = mysqli_query($con, $sql);
+					  								if (mysqli_num_rows($query_inscrito) == 0 && $row['DATA'] >= date('Y-m-d')) {
+					  									?>
+					  									<a href="enviar_prova.php?codigo=<?php echo $inscrito?>" class="btn btn-warning">Envie seu resultado!</a>
+					  									<?php
+					  								}else{
+					  									?>
+					  									<p style="color: red">Agora é só aguardar o resultado :)</p>
+					  									<?php
+					  								}
+					  							}else if($row['DATA'] > $hoje){
+					  								?>
+				  										<p style="color: red">O evento está se aproximando! Fique atento!</p>
 				  									<?php
-				  								}else{
-				  									?>
-				  									<p style="color: red">Agora é só aguardar o resultado :)</p>
+					  							}else{
+					  								?>
+				  										<p style="color: red">Evento encerrado</p>
 				  									<?php
-				  								}
-				  							}
+					  							}
+					  						}
 				  						?>
 				  					</td>
+				  					<td><?php echo substr($row['DATA'], 8,2) . "/" . substr($row['DATA'], 5,2) . "/" . substr($row['DATA'], 0,4)?></td>
+				  					<td><?php echo $row['DT_INSCRICAO']?></td>
+				  					<td><a href="../resultado.php?codigo=<?php echo $row['PROVA_CODIGO']?>" class="btn btn-warning">Resultados</a></td>
 				  					<td>
 				  						<?php
 				  							if($row['PAGO'] == 0){
